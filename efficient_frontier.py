@@ -2,16 +2,12 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Example data for daily returns
-data = {
-    'Asset A': [0.001, 0.002, -0.001, 0.003, 0.001],
-    'Asset B': [0.002, -0.001, 0.003, 0.001, 0.002],
-    'Asset C': [0.001, 0.001, -0.002, 0.002, 0.002],
-    'Asset D': [0.003, 0.002, -0.001, 0.001, 0.003]
-}
+# Load stock data from CSV
+file_path = "sample_stock_data.csv"  # Ensure this file is in the same directory
+data = pd.read_csv(file_path)
 
-# Convert to DataFrame
-returns = pd.DataFrame(data)
+# Calculate daily returns
+returns = data.set_index('Date').pct_change().dropna()
 
 # Calculate the mean returns and covariance matrix
 mean_returns = returns.mean()
