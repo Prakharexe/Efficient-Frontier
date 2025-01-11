@@ -39,4 +39,4 @@ plt.title('Efficient Frontier')
 plt.xlabel('Volatility (Risk)') 
 plt.ylabel('Return')  
 plt.colorbar(label='Sharpe Ratio') 
-plt.show()  # Plotting data for visualization
+plt.show() # Plotting data for visualization
