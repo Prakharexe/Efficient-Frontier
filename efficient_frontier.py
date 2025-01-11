@@ -12,7 +12,7 @@ returns = data.set_index('Date').pct_change().dropna()
 mean_returns = returns.mean()
 covariance_matrix = returns.cov()
 
-# 2. Generate random portfolios for simulation
+# Generate random portfolios for simulation
 num_assets = len(mean_returns)
 num_portfolios = 10000
 results = np.zeros((num_portfolios, 3))
@@ -32,7 +32,7 @@ for i in range(num_portfolios):
 
 results_df = pd.DataFrame(results, columns=['Return', 'Volatility', 'Sharpe Ratio'])
 
-# 3. Plot the Efficient Frontier
+# Plot the Efficient Frontier
 plt.figure(figsize=(10, 6))  
 plt.scatter(results_df['Volatility'], results_df['Return'], c=results_df['Sharpe Ratio'], cmap='viridis', marker='o')  # Plotting data for visualization
 plt.title('Efficient Frontier')  
