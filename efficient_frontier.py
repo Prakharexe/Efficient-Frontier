@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd  
 import matplotlib.pyplot as plt
 
-file_path = "daily_stock_data.csv"  # Ensure this file is in the same directory
+file_path = "daily_stock_data.csv"  
 data = pd.read_csv(file_path)
 
 # Calculate daily returns, drop null values
@@ -39,4 +39,4 @@ plt.title('Efficient Frontier')
 plt.xlabel('Volatility (Risk)') 
 plt.ylabel('Return')  
 plt.colorbar(label='Sharpe Ratio') 
-plt.show() # Plotting data for visualization
+plt.show()
